@@ -6,14 +6,16 @@ import time
 class BALL:
     def __init__(self, canvas, color): # Init with the variables self, canvas, and color.
         self.canvas = canvas # Set the initial starting values.
-        self.id=canvas.create_oval(40, 40, 60, 60, fill=color) # The starting default values for the ball.
-        """
-            Note: x and y coordinates for top left corner and x and y coordinates for the bottom right corner, and finally the fill color for the oval.
-        """
-        self.canvas.move(self.id, 0, 0) # This moves the oval to the specified location.
+        self.id=canvas.create_oval(30, 30, 50, 50, fill=color) # The starting default values for the ball.
+        # Note: x and y coordinates for top left corner and x and y coordinates for the bottom right corner, and finally the fill color for the oval.
+        # 0 = Don't move horizontally (a + no. would indicate movement along the horizontal axis)
+        # -1 = move 1 pixel up the screen (-y) - remeber the computer coordinate system.
+        self.canvas.move(self.id, 100, 200) # This moves the oval to the specified location.
 
-    def draw(self): # A draw method
-        pass
+    def draw(self): # A draw method.
+        self.canvas.move(self.id, 0, -1) # Pass it 3 parameters, the id of the oval, and 0 and -1
+        # 0 = Don't move horizontally (a + no. would indicate movement along the horizontal axis)
+        # -1 = move 1 pixel up the screen (-y) - remeber the computer coordinate system.
 
 # --- MAIN GAME LOOP ---
 def main():
