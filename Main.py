@@ -2,6 +2,10 @@ from tkinter import *
 import random
 import time
 
+# ---
+#       You are starting at Step 5: Creating Bouncing Ball Movement.
+# ---
+
 # --- BALL CLASS ---
 class BALL:
     def __init__(self, canvas, color): # Init with the variables self, canvas, and color.
